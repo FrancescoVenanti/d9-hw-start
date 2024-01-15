@@ -8,30 +8,29 @@ const Favourites = (data) => {
 	return (
 		<Container>
 			<h1>Your favourite jobs</h1>
-			<Link className="btn btn-primary" to={"/"}>
+			<Link className="btn btn-primary me-4" to={"/"}>
 				Home
 			</Link>
+			<Button
+				className=""
+				onClick={() => {
+					dispatch({
+						type: "REMOVE_FAVOURITE",
+					});
+				}}
+			>
+				remove favourites
+			</Button>
+
 			<Row>
 				{favourites.map((fav, i) => (
-					<>
-						<Col xs={10} key={i}>
+					<div key={i}>
+						<Col xs={10}>
 							<div className="p-3 bg-dark rounded my-2">
 								<Link to={"/" + fav}>{fav}</Link>
 							</div>
 						</Col>
-						<Col xs={2}>
-							<Button
-								className="my-2 p-3"
-								onClick={() => {
-									dispatch({
-										type: "REMOVE_FAVOURITE",
-									});
-								}}
-							>
-								REMOVE
-							</Button>
-						</Col>
-					</>
+					</div>
 				))}
 			</Row>
 		</Container>
