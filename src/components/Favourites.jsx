@@ -12,7 +12,7 @@ const Favourites = () => {
 				Home
 			</Link>
 			<Button
-				className=""
+				className="btn-danger"
 				onClick={() =>
 					dispatch({
 						type: "REMOVE_ALL_FAVORITE",
@@ -26,7 +26,7 @@ const Favourites = () => {
 				{favourites.map((fav, i) => (
 					<div key={i}>
 						<Col xs={10}>
-							<div className="p-3 bg-dark rounded my-2">
+							<div className="p-3 bg-dark rounded my-2 d-flex justify-content-between">
 								<Link to={"/" + fav}>{fav}</Link>
 								<Button
 									className=""
