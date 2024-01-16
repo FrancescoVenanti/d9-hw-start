@@ -13,13 +13,13 @@ const Favourites = () => {
 			</Link>
 			<Button
 				className=""
-				onClick={() => {
+				onClick={() =>
 					dispatch({
-						type: "REMOVE_FAVOURITE",
-					});
-				}}
+						type: "REMOVE_ALL_FAVORITE",
+					})
+				}
 			>
-				remove favourites
+				remove all favourites
 			</Button>
 
 			<Row>
@@ -28,6 +28,17 @@ const Favourites = () => {
 						<Col xs={10}>
 							<div className="p-3 bg-dark rounded my-2">
 								<Link to={"/" + fav}>{fav}</Link>
+								<Button
+									className=""
+									onClick={() =>
+										dispatch({
+											type: "REMOVE_FAVOURITE",
+											payload: fav,
+										})
+									}
+								>
+									remove favourites
+								</Button>
 							</div>
 						</Col>
 					</div>
